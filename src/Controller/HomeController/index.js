@@ -16,8 +16,9 @@ class HomeController {
         const user = new Login(formData);
 
         user.save()
-            .then(() => res.json("save successfully"))
-            .catch((error) => console.log(error))
+        .then(() => res.json("successfully!!!"))
+        .catch(() => console.log(error))
+
     }
     
 }

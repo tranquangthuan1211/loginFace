@@ -4,7 +4,9 @@ const port = 3000;
 const route = require('./Route/index');
 const morgan = require('morgan');
 const db = require("./config/db");
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.urlencoded());
 app.use(express.json());
 //-------------
