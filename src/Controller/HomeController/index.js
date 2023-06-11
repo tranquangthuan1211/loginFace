@@ -2,8 +2,12 @@ const Login = require('../../Model/index.js')
 class HomeController {
     home(req,res) {
        Login.find({})
-        .then ((user) => res.json(user))
-        .catch((error) => console.log(error))
+       .then((user) => {
+        res.json(user)
+       })
+       .catch((error) => {
+        console.log(error)
+       })
     }
     handle(req,res,next) {
         console.log(req.body)
@@ -12,7 +16,7 @@ class HomeController {
         const user = new Login(formData);
 
         user.save()
-            .then(() => res.redirect('/'))
+            .then(() => res.json("save successfully"))
             .catch((error) => console.log(error))
     }
     
