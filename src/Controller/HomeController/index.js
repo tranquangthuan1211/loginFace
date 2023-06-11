@@ -1,7 +1,9 @@
 const Login = require('../../Model/index.js')
 class HomeController {
     home(req,res) {
-       res.render("./home/home.handlebars")
+       Login.find({})
+        .then ((user) => res.json(user))
+        .catch((error) => console.log(error))
     }
     handle(req,res,next) {
         console.log(req.body)
